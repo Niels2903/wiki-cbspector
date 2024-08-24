@@ -36,8 +36,8 @@ RUN apk update && \
 
 WORKDIR /wiki
 
-COPY --from=assets /wiki/assets ./assets
-COPY --from=assets /wiki/node_modules ./node_modules
+#COPY --from=assets /wiki/assets ./assets
+#COPY --from=assets /wiki/node_modules ./node_modules
 COPY ./server ./server
 #COPY --from=assets /wiki/server/views ./server/views
 COPY ./config.yml ./config.yml
