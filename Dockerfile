@@ -18,9 +18,9 @@ COPY ./.eslintignore ./.eslintignore
 COPY ./.eslintrc.yml ./.eslintrc.yml
 
 #RUN yarn --cache-folder /codefresh/volume/yarn
-RUN yarn build
-RUN rm -rf /wiki/node_modules
-RUN yarn --production
+#RUN yarn build
+#RUN rm -rf /wiki/node_modules
+#RUN yarn --production
 
 # ===============
 # --- Release ---
