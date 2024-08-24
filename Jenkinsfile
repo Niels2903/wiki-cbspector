@@ -1,4 +1,4 @@
-node('srv-wiki') {
+node {
     def app
     stage('Clone') {
         checkout scm
