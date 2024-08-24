@@ -1,0 +1,33 @@
+version: "3"
+services:
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: wpHfp&xk2n51?8e
+      POSTGRES_USER: wikijs
+    logging:
+      driver: "none"
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  wiki:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: wikijs
+      DB_PASS: wpHfp&xk2n51?8e
+      DB_NAME: wiki
+    restart: unless-stopped
+    ports:
+     - "80:3000"
+     - "443:3443"
+
+volumes:
+  db-data:
