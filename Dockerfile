@@ -41,7 +41,6 @@ COPY --from=assets /wiki/node_modules ./node_modules
 COPY ./server ./server
 COPY --from=assets /wiki/server/views ./server/views
 COPY ./config.yml ./config.yml
-COPY ./dev/docker/wait.sh ./wait.sh
 COPY ./package.json ./package.json
 COPY ./LICENSE ./LICENSE
 
