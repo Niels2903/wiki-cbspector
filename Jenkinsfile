@@ -8,6 +8,6 @@ node{
 
     stage('deploy_wikijs'){
 
-        sh 'sudo docker-compose up -d --build'
+        sh 'docker-compose up -d --build'
         }
 }
