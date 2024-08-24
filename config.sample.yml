@@ -27,9 +27,9 @@ db:
   host: localhost
   port: 5432
   user: wikijs
-  pass: wikijsrocks
+  pass: wpHfp&xk2n51?8e
   db: wiki
-  ssl: false
+  ssl: true
 
   # Optional - PostgreSQL / MySQL / MariaDB only:
   # -> Uncomment lines you need below and set `auto` to false
@@ -47,7 +47,7 @@ db:
   schema: public
 
   # SQLite only:
-  storage: path/to/database.sqlite
+  #storage: path/to/database.sqlite
 
 #######################################################################
 # ADVANCED OPTIONS                                                    #
@@ -59,31 +59,15 @@ db:
 # ---------------------------------------------------------------------
 # Consider using a reverse proxy (e.g. nginx) if you require more
 # advanced options than those provided below.
-
 ssl:
-  enabled: false
+  enabled: true
   port: 3443
+  provider: letsencrypt
 
-  # Provider to use, possible values: custom, letsencrypt
-  provider: custom
-
-  # ++++++ For custom only ++++++
-  # Certificate format, either 'pem' or 'pfx':
-  format: pem
-  # Using PEM format:
-  key: path/to/key.pem
-  cert: path/to/cert.pem
-  # Using PFX format:
-  pfx: path/to/cert.pfx
-  # Passphrase when using encrypted PEM / PFX keys (default: null):
-  passphrase: null
-  # Diffie Hellman parameters, with key length being greater or equal
-  # to 1024 bits (default: null):
-  dhparam: null
-
-  # ++++++ For letsencrypt only ++++++
-  domain: wiki.yourdomain.com
-  subscriberEmail: admin@example.com
+  domain: abatti-wiki-js.cyberspector.xyz
+  subscriberEmail: nielsjeson@gmail.com
+  
+  
 
 # ---------------------------------------------------------------------
 # Database Pool Options
