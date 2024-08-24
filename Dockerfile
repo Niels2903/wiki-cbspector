@@ -20,7 +20,7 @@ COPY ./.eslintrc.yml ./.eslintrc.yml
 #RUN yarn --cache-folder /codefresh/volume/yarn
 #RUN yarn build
 #RUN rm -rf /wiki/node_modules
-#RUN yarn --production
+RUN yarn --production
 
 # ===============
 # --- Release ---
@@ -36,10 +36,10 @@ RUN apk update && \
 
 WORKDIR /wiki
 
-#COPY --from=assets /wiki/assets ./assets
-#COPY --from=assets /wiki/node_modules ./node_modules
+COPY --from=assets /wiki/assets ./assets
+COPY --from=assets /wiki/node_modules ./node_modules
 COPY ./server ./server
-#COPY --from=assets /wiki/server/views ./server/views
+COPY --from=assets /wiki/server/views ./server/views
 COPY ./config.yml ./config.yml
 COPY ./package.json ./package.json
 COPY ./LICENSE ./LICENSE
